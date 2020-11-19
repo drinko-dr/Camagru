@@ -1,0 +1,21 @@
+#AddDefaultCharset UTF-8
+
+#RewriteRule ^page?$ page.php [NC, L]
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# ЗАПРЕЩЁННЫЕ ФАЙЛЫ
+RewriteRule .htaccess - [F]
+#RewriteRule template.php - [F]
+
+# ПРАВИЛА mod_rewrite
+#RewriteRule (.*)$ /index.php?option=$1 [L]
+#RewriteRule ^([^/.]+)/?$ index.php?option=$1 [L]
+#RewriteRule ^reset-pwd(.*)?$ index.php$1 [L]
+RewriteRule reset-pwd$ index.php?option=reset-pwd [L]
+RewriteRule ^([^/.]+)/?$ index.php?option=$1 [L]
+RewriteRule ^([^/.]+)/([^/.]+)/?$ index.php?option=$1&option2=$2 [L]

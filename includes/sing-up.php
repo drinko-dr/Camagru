@@ -43,54 +43,61 @@
         if ($error != true){
             $res = $db->setUser($username, $email, $password);
             $db = NULL;
-            $color = "green";
-            if ($res == "error"){
-                $color = "red";
-            }
-            ?>
-            <div style="border: solid 3px <?php echo $color ?>">
-                <span><?php echo $res ?></span>
-            </div>
-            <div>
-                <a href="/page">Sing IN</a>
-            </div>
-            <?php
+            $_SESSION['error'] = 1;
+            $_SESSION['msg'] = "Спасибо за регистрацию. Теперь вы можете войти на сайт, используя логин и пароль, указанные при регистрации.";
+            header('Location: /sing-in');
             exit();
         }
         $db = NULL;
     }
+get_header();
 ?>
-<style>
-    form{
-        display: table-caption;
-    }
-    label{
-        display: block;
-        margin: 10px 0px;
-    }
-    .main-pos{
-        width: 10%;
-        margin: auto;
-    }
-</style>
+
 <div class="main-pos">
     <form action="/sing-up" method="post">
-        <label for="login">Имя пользователя
-            <input id="login" type="text" name="login" value="<?php echo $_SESSION["login"]; ?>">
-            <span style="color: red"><?php echo $error_name; ?></span>
-        </label>
-        <label for="email">E-mail
-            <input id="email" type="text" name="email" value="<?php echo $_SESSION["email"]; ?>">
-            <span style="color: red"><?php echo $error_email; ?></span>
-        </label>
-        <label for="password">Пароль
-            <input id="password" type="password" name="password">
-            <span style="color: red"><?php echo $error_password; ?></span>
-        </label>
-        <label for="re-password">Подтвердите пароль
-            <input id="re-password" type="password" name="re-password">
-            <span style="color: red"><?php echo $error_re_password; ?></span>
-        </label>
-        <input name="send" type="submit" value="Sing Up">
+
+        <div class="form-group">
+            <div class="col-sm-3 control-label">
+                <label for="login">Имя пользователя</label>
+            </div>
+            <div class="col-sm-8 controls">
+                <input id="login" type="text" name="login" value="<?php echo $_SESSION["login"]; ?>">
+                <span style="color: red"><?php echo $error_name; ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 control-label">
+                <label for="email">E-mail
+            </div>
+            <div class="col-sm-8 controls">
+                <input id="email" type="text" name="email" value="<?php echo $_SESSION["email"]; ?>">
+                <span style="color: red"><?php echo $error_email; ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 control-label">
+                <label for="password">Пароль</label>
+            </div>
+            <div class="col-sm-8 controls">
+                <input id="password" type="password" name="password">
+                <span style="color: red"><?php echo $error_password; ?></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 control-label">
+                <label for="re-password">Подтвердите пароль
+
+            </div>
+            <div class="col-sm-8 controls">
+                <input id="re-password" type="password" name="re-password">
+                <span style="color: red"><?php echo $error_re_password; ?></span>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-8 controls">
+                <input name="send" type="submit" value="Sing Up">
+            </div>
+        </div>
     </form>
 </div>

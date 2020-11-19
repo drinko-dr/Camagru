@@ -44,20 +44,31 @@ document.addEventListener('DOMContentLoaded', function(){
      * ПопАп форма для входа в аккаунт
      */
     function showSingIn(){
-        popUpContainer.insertAdjacentHTML('beforeend', "<form id=\"sing-in-form\" method=\"post\">" +
-                                                                "   <label for=\"name\">Имя пользователя\n" +
-                                                                "        <input id=\"login\" type=\"text\" name=\"login\">\n" +
-                                                                "    </label>\n" +
-                                                                "    <label for=\"password\">Пароль\n" +
-                                                                "        <input id=\"password\" type=\"password\" name=\"password\">\n" +
-                                                                "        <span id='errorMSG' style=\"color: red\"></span>\n" +
-                                                                "    </label>\n" +
-                                                                "    <label>\n" +
-                                                                "        <input id=\"save-me\" type=\"checkbox\">\n" +
-                                                                "        <span>Запомнить меня?</span>\n" +
-                                                                "    </label>\n" +
-                                                                "    <input name=\"sing-in\" type=\"submit\" id=\"sendForm\" value=\"Sing In\">" +
-                                                                "</form>");
+        popUpContainer.insertAdjacentHTML('beforeend', "<form id=\"pop-up-action\" method=\"post\">" +
+                                                                    "<div class=\"form-group-js\">" +
+                                                                    "<div class=\" control-label\">" +
+                                                                    "<label for=\"name\">Имя пользователя" +
+                                                                    "</div>" +
+                                                                    "<div class=\" controls\">" +
+                                                                    "<input id=\"login\" type=\"text\" name=\"login\">" +
+                                                                    "</div>" +
+                                                                    "</div>" +
+                                                                    "<div class=\"form-group-js\">" +
+                                                                    "<div class=\" control-label\">" +
+                                                                    "<label for=\"password\">Пароль" +
+                                                                    "</div>" +
+                                                                    "<div class=\" controls\">" +
+                                                                    "<input id=\"password\" type=\"password\" name=\"password\">" +
+                                                                    "<p id=\"errorMSG\" style='color: red; margin-top: 5px'></p>" +
+                                                                    "</div>" +
+                                                                    "</div>" +
+                                                                    "<div class=\"form-group-js\">" +
+                                                                    "<div class=\" controls\">" +
+                                                                    "<input name=\"sing-in\" type=\"submit\" id=\"sendForm\" value=\"Sing In\">" +
+                                                                    "</div>" +
+                                                                    "</div>" +
+                                                                    "<a href='reset-pwd'>Забыли пароль?</a>" +
+                                                                    "</form>");
         popUpContainer.classList.add("show-popUp");
         overlay.style.display = "block";
         var idFom = document.getElementById("sendForm");
@@ -73,6 +84,13 @@ document.addEventListener('DOMContentLoaded', function(){
         var element = document.getElementById(val);
         popUpContainer.classList.remove("show-popUp");
         overlay.style.display = "none";
+        var video = document.querySelector('video');
+        var tools = document.getElementById('redactor-tools');
+        if (video){
+            video.srcObject.getTracks().forEach(function (track) {track.stop(); });
+            tools.style.display = "none";
+        }
+
         element.remove();
     }
 
@@ -87,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function(){
     /**
      * Глобальные слушатели для ПопАп форм
      */
-    overlay.addEventListener("click", () => { closePopUp("sing-in-form"); });
-    closePopUpBtn.addEventListener("click",() => { closePopUp("sing-in-form"); });
+    overlay.addEventListener("click", () => { closePopUp("pop-up-action"); });
+    closePopUpBtn.addEventListener("click",() => { closePopUp("pop-up-action"); });
 
     /**
      * ajax функция для вывода формы входа в личный кабинет
@@ -101,24 +119,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
             var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
             var xhr = new XHR();
-            xhr.open('POST', 'http://camaguru/sing-in', true);
+            xhr.open('POST', '/auth', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
             xhr.onload = function () {
                     var resalt = this.responseText;
-                    if (resalt == "false")
+                    console.log(resalt);
+                    if (resalt === "false")
                         document.getElementById("errorMSG").innerHTML = "Неверный имя пользователя или пароль!";
                     else{
                         location.href=location.href;
                     }
-                }
+                };
 
             xhr.onerror = function () {
                 alert('Ошибка ' + this.status);
-            }
-
-
+            };
             xhr.send(data);
 
     }
+
 });

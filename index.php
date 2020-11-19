@@ -1,40 +1,51 @@
 <?php
 session_start();
 define("INDEX", "");
-include "config/database.php";
-include './includes/setup.php';
+require_once "config/database.php";
+require_once './includes/setup.php';
 //include './templates/index.php';
-//include './includes/sing-in.php';
+//include './includes/auth.php';
 //include './includes/sing-up.php';
-include './includes/functions.php';
+require_once './includes/functions.php';
 //$db = new DataBase();
 switch ($_GET[option]){
 	case if_user($_GET[option]):
-			include ("./templates/page.php");
+		require_once ("./templates/page.php");
 		break;
 
 	case "":
 	case "home":
-		include("./templates/home.php");
+		require_once("./templates/home.php");
 		break;
 
     case "sing-up":
-        include ("./includes/sing-up.php");
+		get_sing_up();
         break;
 
 	case "sing-in":
-		include ("./includes/sing-in.php");
+		get_sing_in();
+		break;
+
+	case "save_img":
+		require_once ("./includes/save_img.php");
+		break;
+
+	case "auth":
+		require_once ("./includes/auth.php");
+		break;
+
+	case "reset-pwd":
+		require_once ("./includes/reset-pwd.php");
 		break;
 
 	default:
-		include("./templates/error.php");
+		require_once("./templates/error.php");
         break;
 }
-
-	function if_user($login){
+	function if_user($name){
 		$db = new DataBase();
-		$user = $db->getUser($login);
-		if ( $user[0]["login"] == $login ){
+		$user = $db->getUserByNickName($name);
+		if ( $user[0]["name"] == $name ){
 			$db = NULL;
 			return true;
 		}

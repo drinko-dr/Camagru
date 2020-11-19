@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc79b826-e144-448c-a1b9-e2148fe8be43" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
+  <component name="ProjectId" id="1ZtIFX1PrRv8jZAmKKXgjR9zMKL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo&#10;mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../avito" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Openserver\OSPanel\domains\camaguru\images" />
+      <recent name="D:\Openserver\OSPanel\domains\camaguru\accets\js" />
+      <recent name="D:\Openserver\OSPanel\domains\camaguru\config" />
+      <recent name="D:\Openserver\OSPanel\domains\camaguru\includes" />
+      <recent name="D:\Openserver\OSPanel\domains\camaguru\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.test.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc79b826-e144-448c-a1b9-e2148fe8be43" name="Default Changelist" comment="" />
+      <created>1585651860261</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585651860261</updated>
+      <workItem from="1585651862979" duration="82554000" />
+      <workItem from="1586428981772" duration="40000" />
+      <workItem from="1586429069481" duration="959000" />
+      <workItem from="1586891563940" duration="4324000" />
+      <workItem from="1587761483490" duration="11000" />
+      <workItem from="1588324110504" duration="25888000" />
+      <workItem from="1590238549607" duration="1449000" />
+      <workItem from="1590241699823" duration="8187000" />
+      <workItem from="1591085072483" duration="18000" />
+      <workItem from="1593262266265" duration="14540000" />
+      <workItem from="1593332198059" duration="15601000" />
+      <workItem from="1593394596887" duration="19949000" />
+      <workItem from="1593518093867" duration="125197000" />
+      <workItem from="1594888292644" duration="649000" />
+      <workItem from="1594905652253" duration="46000" />
+      <workItem from="1594907916968" duration="4326000" />
+      <workItem from="1595059974256" duration="616000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="425" y="242" key="#CLI_Interpreters" timestamp="1590239313148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="425" y="242" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1590239313148" />
+    <state x="552" y="178" key="#PHP" timestamp="1590239314216">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1590239314216" />
+    <state x="552" y="178" key="#SQL_Dialects" timestamp="1593690906202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1593690906202" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593690999114">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593690999114" />
+    <state x="679" y="208" key="#test.php" timestamp="1590239039043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="679" y="208" key="#test.php/0.0.1920.1040@0.0.1920.1040" timestamp="1590239039043" />
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1595020150875">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595020150875" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591042142062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591042142062" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591042142060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591042142060" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591042142060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591042142060" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591042142061">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591042142061" />
+    <state x="727" y="334" key="NewPhpClassDialog" timestamp="1593694909011">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593694909011" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1593803594217">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593803594217" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1590241759620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590241759620" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1595059989007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595059989007" />
+    <state x="603" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1593276537707">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="603" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593276537707" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1594239975334">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594239975334" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594066707948">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594066707948" />
+  </component>
+</project>

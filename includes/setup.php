@@ -1,7 +1,7 @@
 <?php
-require_once './config/database.php';
+defined('INDEX') OR die('Прямой доступ к странице запрещён!');
+//require_once './config/database.php';
 class Setup extends DataBase {
-
 private $install = false;
 
     public function __construct(){
@@ -41,16 +41,25 @@ private $install = false;
 				"CREATE TABLE `cm_users` (
                     id int(11) NOT NULL AUTO_INCREMENT,
                     login varchar(24) NOT NULL,
-                    email varchar(24) NOT NULL,
-                    password varchar(24) NOT NULL,
+                    name varchar(24) NOT NULL,
+                    email varchar(255) NOT NULL,
+                    password varchar(255) NOT NULL,
                         PRIMARY KEY  (id),
-                        KEY name (username)
+                        KEY name (login)
                         ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;");
 
 			$createDT->execute("CREATE TABLE `cm_options` (
                     id int(11) NOT NULL AUTO_INCREMENT,
                     name varchar(255) NOT NULL,
                     value varchar(255) NOT NULL,
+                        PRIMARY KEY  (id)
+                        ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;");
+
+			$createDT->execute("CREATE TABLE `cm_user_meta` (
+                    id int(11) NOT NULL AUTO_INCREMENT,
+                    user_id int(11) NOT NULL,
+                    meta_key varchar(255) NOT NULL,
+                    meta_value varchar(255) NOT NULL,
                         PRIMARY KEY  (id)
                         ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;");
 
