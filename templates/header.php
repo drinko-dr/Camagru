@@ -64,13 +64,13 @@
                     <div class="menu">
                         <ul>
                             <li>
-                                <a href="home">Home</a>
+                                <a href="/home">Home</a>
                             </li>
                             <li>
-                                <a href="home">Gallery</a>
+                                <a href="/home">Gallery</a>
                             </li>
                             <li>
-                                <a href="home">About</a>
+                                <a href="/home">About</a>
                             </li>
                         </ul>
                     </div>

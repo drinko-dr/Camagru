@@ -8,8 +8,8 @@ require_once './includes/setup.php';
 //include './includes/sing-up.php';
 require_once './includes/functions.php';
 //$db = new DataBase();
-switch ($_GET[option]){
-	case if_user($_GET[option]):
+switch ($_GET['option']){
+	case if_user($_GET['option']):
 		require_once ("./templates/page.php");
 		break;
 

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc79b826-e144-448c-a1b9-e2148fe8be43" name="Default Changelist" comment="" />
+    <list default="true" id="dc79b826-e144-448c-a1b9-e2148fe8be43" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +41,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1ZtIFX1PrRv8jZAmKKXgjR9zMKL" />
   <component name="ProjectViewState">
@@ -46,8 +55,9 @@
     <property name="DatabaseDriversLRU" value="mongo&#10;mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../avito" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -103,6 +113,7 @@
       <workItem from="1594905652253" duration="46000" />
       <workItem from="1594907916968" duration="4326000" />
       <workItem from="1595059974256" duration="616000" />
+      <workItem from="1606038584980" duration="915000" />
     </task>
     <servers />
   </component>

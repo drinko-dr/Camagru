@@ -1,14 +1,12 @@
 <?php
+get_header();
+if ($_GET["option2"] == "settings"){
+	require_once ('./includes/user-settings.php');
+	require_once './templates/template-user-settings.php';
+}
+else
+	echo "page";
+get_footer();
 
-	if ($_GET[option2] == "settings"){
-		require_once ('./includes/user-settings.php');
-		get_header();
-		include './templates/template-user-settings.php';
-	}
-	else{
-		get_header();
-		echo "page";
-		get_footer();
-	}
 ?>
 
