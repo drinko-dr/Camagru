@@ -1,4 +1,5 @@
 <?php
+namespace config;
 defined('INDEX') OR die('Прямой доступ к странице запрещён!');
 //require_once './config/database.php';
 class Setup extends DataBase {
@@ -62,6 +63,15 @@ private $install = false;
                     meta_value varchar(255) NOT NULL,
                         PRIMARY KEY  (id)
                         ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;");
+
+			$createDT->execute("CREATE TABLE `cm_gallary` (
+                    id int(11) NOT NULL AUTO_INCREMENT,
+                    user_id int(11) NOT NULL,
+                    link varchar(255) NOT NULL,
+                    comments varchar(255) NOT NULL,
+                        PRIMARY KEY  (id)
+                        ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;");
+
 
 			$createDT = NULL;
 

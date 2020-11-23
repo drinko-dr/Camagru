@@ -1,6 +1,9 @@
 <?php
 
+use config\DataBase;
+
 defined('INDEX') OR die('Прямой доступ к странице запрещён!');
+
 
 if ( empty($db) )
 	$db = new DataBase();
@@ -8,6 +11,8 @@ if ( empty($db) )
 $user = $db->getCurrentUser();
 $login = $user[0]['login'];
 $name = $user[0]['name'];
+if ($_GET['option'] != $name)
+	header("Location: /$name/settings");
 $email = $user[0]['email'];
 $old_pwd =  null;
 $new_pwd =  null;

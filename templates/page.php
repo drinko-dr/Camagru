@@ -1,11 +1,10 @@
 <?php
 get_header();
-if ($_GET["option2"] == "settings"){
-	require_once ('./includes/user-settings.php');
-	require_once './templates/template-user-settings.php';
-}
-else
-	echo "page";
+include_once "classes/model/Model_Gallegy.php";
+$model = new Model_Gallegy();
+$img = $model->getUserImageList();
+var_dump($img[2]['comments']->rates);
+echo "page";
 get_footer();
 
 ?>

@@ -12,8 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Camaguru</title>
-    <link rel="stylesheet" href="../accets/css/style.css">
-    <script type="text/javascript" src="../accets/js/main.js"></script>
+    <link rel="stylesheet" href="/accets/css/style.css">
+    <script type="text/javascript" src="/accets/js/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet">
 
 </head>
@@ -58,7 +58,7 @@
                 <div class="header-container all-content">
                     <div class="logo">
                         <a href="/">
-                            <img src="../images/logo.png">
+                            <img src="/images/logo.png">
                         </a>
                     </div>
                     <div class="menu">
@@ -84,7 +84,7 @@
                         <?php if ($_SESSION["log"] === true) : ?>
                         <div id="my-account" class="my-account">
                             <div class="account-name"><?php echo $_SESSION["name"] ?></div>
-                            <img src="../images/login.png" alt="<?php echo $_SESSION["name"] ?>">
+                            <img src="/images/login.png" alt="<?php echo $_SESSION["name"] ?>">
                             <div class="account-arrow"></div>
                         </div>
                         <div id="profile-menu" class="profile-menu">

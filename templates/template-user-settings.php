@@ -1,4 +1,5 @@
 <?php
+    get_header();
     global $login, $name, $error_name, $email, $error_email, $error_old_pwd, $error_new_pwd;
 ?>
 <script src="/accets/js/webCam.js"></script>

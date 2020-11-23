@@ -1,16 +1,22 @@
 <?php
+use classes\controller\Controller_Gallary;
+use config\DataBase;
 session_start();
 define("INDEX", "");
 require_once "config/database.php";
 require_once './includes/setup.php';
-//include './templates/index.php';
-//include './includes/auth.php';
-//include './includes/sing-up.php';
+include_once "classes\controller\Controller_Gallary.php";
 require_once './includes/functions.php';
-//$db = new DataBase();
+
+
 switch ($_GET['option']){
-	case if_user($_GET['option']):
-		require_once ("./templates/page.php");
+	case if_user($_GET['option']) && $_GET['option2'] == "settings":
+		require_once ('./includes/user-settings.php');
+		require_once './templates/template-user-settings.php';
+		break;
+
+	case if_user($_GET['option']) && !$_GET['option2']:
+		Controller_Gallary::action_index();
 		break;
 
 	case "":

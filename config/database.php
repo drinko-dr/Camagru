@@ -1,4 +1,7 @@
 <?php
+namespace config;
+use PDO;
+
 defined('INDEX') OR die('Прямой доступ к странице запрещён!');
 define(CONFIG, include $_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
 class DataBase{
@@ -37,10 +40,10 @@ class DataBase{
      * @param $sql
      * @return array
      */
-    protected function execute($sql){
+    protected function execute($sql, $param){
         $sth = $this->link->prepare($sql);
 
-        return $sth->execute();
+        return $sth->execute($param);
     }
 
     /**
@@ -48,10 +51,10 @@ class DataBase{
      * @param $sql
      * @return array
      */
-    private function query($sql){
+    public function query($sql, $param){
         $sth = $this->link->prepare($sql);
 
-        $sth->execute();
+        $sth->execute($param);
 
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -66,14 +69,14 @@ class DataBase{
      * @return array
      */
     public function getUser($user){
-        return $this->query("SELECT * FROM `cm_users` WHERE `login`='".$user."'");;
+        return $this->query("SELECT * FROM `cm_users` WHERE `login`= ?", array($user));
     }
     /**
      * @param $user
      * @return array
      */
     public function getUserByEmail($email){
-        return $this->query("SELECT * FROM `cm_users` WHERE `email`='".$email."'");;
+        return $this->query("SELECT * FROM `cm_users` WHERE `email`= ?", array($email));
     }
 
     /**
@@ -81,7 +84,7 @@ class DataBase{
      * @return array
      */
     public function getUserByNickName($name){
-        return $this->query("SELECT * FROM `cm_users` WHERE `name`='".$name."'");;
+        return $this->query("SELECT * FROM `cm_users` WHERE `name`= ?", array($name));
     }
 
 
@@ -95,7 +98,7 @@ class DataBase{
      * @return boolean
      */
     public function checkUserEmail($email){
-        $email = $this->query("SELECT * FROM `cm_users` WHERE `email`='".$email."'");
+        $email = $this->getUserByEmail($email);
         if ($email != NULL)
             return true;
         else
@@ -111,10 +114,9 @@ class DataBase{
             return "Пользователь c таким ником уже существует";
         }
         else{
-            $this->execute("INSERT INTO `cm_users` SET `login`='".$user."',`name`='".$user."', `email`='".$email."', `password`='".hash("whirlpool", $password )."'");
+            $this->execute("INSERT INTO `cm_users` SET `login`= ?,`name`=?, `email`=?, `password`= ?", array($user, $user, $email, hash("whirlpool", $password )));
             return "Пользователь зарегестрирован!";
         }
-        return "error";
     }
 
     /**
@@ -126,9 +128,9 @@ class DataBase{
      */
     public function setUserMeta($id, $key, $value){
         if ( empty($this->getUserMeta($id, $key)) )
-            $this->execute("INSERT INTO `cm_user_meta` SET `user_id`='".$id."', `meta_key`='".$key."', `meta_value`='".$value."'");
+            $this->execute("INSERT INTO `cm_user_meta` SET `user_id`= ?, `meta_key`=?, `meta_value`=?", array($id, $key, $value));
         else
-            $this->execute("UPDATE `cm_user_meta` SET `meta_value` = '".$value."' WHERE `cm_user_meta`.`user_id`=".$id." AND `cm_user_meta`.`meta_key` = '".$key."'");
+            $this->execute("UPDATE `cm_user_meta` SET `meta_value` = ? WHERE `cm_user_meta`.`user_id`= ? AND `cm_user_meta`.`meta_key` = ?", array($value, $id, $key));
     }
 
     /**
@@ -139,7 +141,7 @@ class DataBase{
      * получение мета информации пользователя
      */
     public  function getUserMeta($id, $key){
-        $value = $this->query("SELECT * FROM `cm_user_meta` WHERE `user_id`='".$id."' AND `meta_key`='".$key."'");
+        $value = $this->query("SELECT * FROM `cm_user_meta` WHERE `user_id`= ? AND `meta_key`= ?", array($id, $key));
         return $value[0]['meta_value'];
     }
 
@@ -151,14 +153,14 @@ class DataBase{
      */
 
     public function delUserMeta($id, $key){
-        $this->execute("DELETE FROM `cm_user_meta` WHERE `cm_user_meta`.`user_id`='".$id."' AND `cm_user_meta`.`meta_key`='".$key."'");
+        $this->execute("DELETE FROM `cm_user_meta` WHERE `cm_user_meta`.`user_id`= ? AND `cm_user_meta`.`meta_key`= ?", array($id, $key));
     }
     /**
      * @param $updatePwd
      * @return boolean
      */
     public function upDatePass($login, $new_pwd){
-        $this->execute("UPDATE `cm_users` SET `password` = '".$new_pwd."' WHERE `cm_users`.`login` = '".$login."'");
+        $this->execute("UPDATE `cm_users` SET `password` = ? WHERE `cm_users`.`login` = ?", array($new_pwd, $login));
     }
 
     /**
@@ -167,9 +169,9 @@ class DataBase{
      */
     public function upDateUser($name, $email, $new_pwd){
         if ($new_pwd != null)
-            $this->execute("UPDATE `cm_users` SET `name` = '".$name."', `email` = '".$email."', `password` = '".$new_pwd."' WHERE `cm_users`.`login` = '".$_SESSION['login']."'");
+            $this->execute("UPDATE `cm_users` SET `name` = ?, `email` = ?, `password` = ? WHERE `cm_users`.`login` = ?", array($name, $email, $new_pwd, $_SESSION['login']));
         else
-            $this->execute("UPDATE `cm_users` SET `name` = '".$name."', `email` = '".$email."' WHERE `cm_users`.`login` = '".$_SESSION['login']."'");
+            $this->execute("UPDATE `cm_users` SET `name` = ?, `email` = ? WHERE `cm_users`.`login` = ?", array($name, $email, $_SESSION['login']));
     }
 
 
